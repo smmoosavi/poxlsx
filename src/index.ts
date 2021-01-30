@@ -1,12 +1,11 @@
-// read more about doc comment syntax in https://api-extractor.com/pages/tsdoc/doc_comment_syntax/
-
 /**
  * sync po/xlsx files
  *
  * @remarks
- * provide {@link Poxlsx} function that returns `poxlsx` string
+ * sync po file and xlsx files/google sheet
  *
  * @packageDocumentation
  */
 
-export { Poxlsx } from './poxlsx';
+export { syncDown } from './sync-down';
+export { syncUp } from './sync-up';

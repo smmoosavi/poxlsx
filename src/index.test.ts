@@ -1,7 +1,8 @@
-import { Poxlsx } from './index';
+import { syncDown, syncUp } from './index';
 
 describe('Poxlsx', () => {
-  it('should return poxlsx', () => {
-    expect(Poxlsx()).toBe('poxlsx');
+  it('should define sync down/sync up functions', () => {
+    expect(syncDown).toBeDefined();
+    expect(syncUp).toBeDefined();
   });
 });
