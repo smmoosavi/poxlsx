@@ -1,0 +1,38 @@
+{
+  "name": "poxlsx",
+  "description": "sync po/xlsx files",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/poxlsx.js",
+  "unpkg": "dist/poxlsx.js",
+  "module": "es/poxlsx.js",
+  "typings": "./index.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "bin",
+    "src",
+    "index.d.ts",
+    "tsdoc-metadata.json"
+  ],
+  "bin": {
+    "poxlsx": "bin/poxlsx.js"
+  },
+  "scripts": {
+    "build": "libton-script build",
+    "build:doc": "libton-script doc",
+    "test": "libton-script test --coverage --verbose",
+    "lint": "libton-script lint",
+    "format": "libton-script format",
+    "format:check": "libton-script format --check",
+    "validate": "libton-script lint && libton-script format --check && libton-script test --coverage --verbose",
+    "prepublishOnly": "yarn validate && yarn build"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.20",
+    "libton-script": "0.12.7",
+    "husky": "4.3.8",
+    "lint-staged": "10.5.3"
+  }
+}
