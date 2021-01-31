@@ -1,0 +1,5 @@
+files:
+  - language: fa
+    po: fa.po
+    xlsx: google://PVNWeXQTmAG1ynle5UBSSCnMpLWdXVZ1#fa
+key-file: key.json

@@ -1,0 +1,8 @@
+files:
+  - language: fa
+    po: fa.po
+    xlsx: google://PVNWeXQTmAG1ynle5UBSSCnMpLWdXVZ1#fa
+  - language: ar
+    po: ar.po
+    xlsx: google://PVNWeXQTmAG1ynle5UBSSCnMpLWdXVZ1#ar
+key-file: key.json

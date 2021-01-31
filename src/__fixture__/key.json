@@ -1,0 +1,4 @@
+{
+  "private_key": "-----BEGIN PRIVATE KEY-----\nprivate key is here\n-----END PRIVATE KEY-----\n",
+  "client_email": "sample-bot@sample-app.iam.gserviceaccount.com"
+}
