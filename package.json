@@ -30,6 +30,7 @@
     "prepublishOnly": "yarn validate && yarn build"
   },
   "devDependencies": {
+    "@types/gettext-parser": "^4.0.0",
     "@types/jest": "26.0.20",
     "@types/sade": "^1.7.2",
     "husky": "4.3.8",
@@ -38,6 +39,7 @@
   },
   "dependencies": {
     "cosmiconfig": "^7.0.0",
+    "gettext-parser": "^4.0.4",
     "load-json-file": "^6.2.0",
     "sade": "^1.7.4"
   }
