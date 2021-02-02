@@ -3,3 +3,9 @@ export interface TranslationItem {
   msgid: string;
   msgstr: string;
 }
+
+export interface WithPo {
+  po: string;
+}
+
+export type TranslationItemWithPo = TranslationItem & WithPo;

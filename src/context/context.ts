@@ -94,7 +94,7 @@ export function getKeyFilePathFromConfig(config: Config) {
   return config['key-file'];
 }
 
-function loadKeyFile(path: string): GoogleKey {
+export function loadKeyFile(path: string): GoogleKey {
   // TODO remove any after validate
   const key: any = loadJson.sync(path);
   return {

@@ -31,7 +31,9 @@
   },
   "devDependencies": {
     "@types/gettext-parser": "^4.0.0",
+    "@types/google-spreadsheet": "^3.0.2",
     "@types/jest": "26.0.20",
+    "@types/lodash": "^4.14.168",
     "@types/sade": "^1.7.2",
     "husky": "4.3.8",
     "libton-script": "0.12.7",
@@ -40,7 +42,9 @@
   "dependencies": {
     "cosmiconfig": "^7.0.0",
     "gettext-parser": "^4.0.4",
+    "google-spreadsheet": "^3.1.15",
     "load-json-file": "^6.2.0",
+    "lodash": "^4.17.20",
     "sade": "^1.7.4"
   }
 }
