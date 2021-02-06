@@ -1,4 +1,4 @@
-import { getContext } from './context/context';
+import { getContext } from '../context/context';
 
 /**
  * @public
