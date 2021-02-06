@@ -7,7 +7,7 @@
  * @packageDocumentation
  */
 
-export declare function syncDown(options?: SyncDownOptions): void;
+export declare function syncDown(options?: SyncDownOptions): Promise<void>;
 
 /**
  * @public
