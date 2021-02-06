@@ -1,12 +1,12 @@
-import gettextParser from 'gettext-parser';
 import fs from 'fs';
-import { TranslationItem } from '../translation/types';
+import gettextParser from 'gettext-parser';
+import { TranslationItemWithComments } from '../translation/types';
 
-export function loadPoFile(path: string): TranslationItem[] {
+export function loadPoFile(path: string): TranslationItemWithComments[] {
   const content = fs.readFileSync(path);
   const po = gettextParser.po.parse(content);
   const dicts = Object.values(po.translations);
-  const items: TranslationItem[] = [];
+  const items: TranslationItemWithComments[] = [];
 
   dicts.forEach((dict) => {
     const msgs = Object.values(dict);
@@ -14,7 +14,8 @@ export function loadPoFile(path: string): TranslationItem[] {
       const msgstr = msg.msgstr.join('');
       const msgctxt = msg.msgctxt ?? '';
       const msgid = msg.msgid;
-      items.push({ msgid, msgctxt, msgstr });
+      const comments = msg.comments;
+      items.push({ msgid, msgctxt, msgstr, comments });
     });
   });
   return items;
