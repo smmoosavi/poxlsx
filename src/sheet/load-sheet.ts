@@ -6,8 +6,10 @@ import { isEqual } from 'lodash';
 import { GoogleKey, XlsxFile } from '../context/context';
 import { TranslationItemWithPo } from '../translation/types';
 
-export async function loadSheet(xlsx: XlsxFile, googleKey: GoogleKey) {
-  const doc = await loadDoc(xlsx, googleKey);
+export async function loadSheet(
+  xlsx: Pick<XlsxFile, 'sheet'>,
+  doc: GoogleSpreadsheet,
+) {
   const sheet = await getOrCreateSheet(xlsx, doc);
   if (!sheet) {
     return;
@@ -25,7 +27,10 @@ export async function loadDoc(
   return doc;
 }
 
-export async function getOrCreateSheet(xlsx: XlsxFile, doc: GoogleSpreadsheet) {
+export async function getOrCreateSheet(
+  xlsx: Pick<XlsxFile, 'sheet'>,
+  doc: GoogleSpreadsheet,
+) {
   const sheet = await getSheet(xlsx, doc);
   if (sheet) {
     if (!(await validateSheet(sheet))) {
@@ -38,7 +43,7 @@ export async function getOrCreateSheet(xlsx: XlsxFile, doc: GoogleSpreadsheet) {
 }
 
 async function getSheet(
-  xlsx: XlsxFile,
+  xlsx: Pick<XlsxFile, 'sheet'>,
   doc: GoogleSpreadsheet,
 ): Promise<GoogleSpreadsheetWorksheet | null> {
   if (xlsx.sheet) {
@@ -58,7 +63,10 @@ async function validateSheet(
   return isEqual(headers, headerValues);
 }
 
-async function createSheet(xlsx: XlsxFile, doc: GoogleSpreadsheet) {
+async function createSheet(
+  xlsx: Pick<XlsxFile, 'sheet'>,
+  doc: GoogleSpreadsheet,
+) {
   if (xlsx.sheet) {
     return await doc.addSheet({ title: xlsx.sheet, headerValues });
   }
