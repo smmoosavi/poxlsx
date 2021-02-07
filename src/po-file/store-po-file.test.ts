@@ -13,13 +13,13 @@ describe('store po file', () => {
     });
     storePoFile('/root/fa.po', faRows);
     const data = loadPoFile('/root/fa.po');
-    expect(data[1]).toEqual({ msgid: 'Apple', msgctxt: '', msgstr: 'سیب' });
-    expect(data[2]).toEqual({ msgid: 'red', msgctxt: '', msgstr: 'قرمز' });
-    expect(data[3]).toEqual({
+    expect(data[0]).toEqual({ msgid: 'Apple', msgctxt: '', msgstr: 'سیب' });
+    expect(data[1]).toEqual({ msgid: 'red', msgctxt: '', msgstr: 'قرمز' });
+    expect(data[2]).toEqual({
       msgid: '{n} days',
       msgctxt: '',
       msgstr: '{n} روزها',
     });
-    expect(data[4]).toEqual({ msgid: 'Key', msgctxt: 'home', msgstr: 'کلید' });
+    expect(data[3]).toEqual({ msgid: 'Key', msgctxt: 'home', msgstr: 'کلید' });
   });
 });

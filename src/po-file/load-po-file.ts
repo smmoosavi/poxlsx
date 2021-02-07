@@ -15,7 +15,9 @@ export function loadPoFile(path: string): TranslationItemWithComments[] {
       const msgctxt = msg.msgctxt ?? '';
       const msgid = msg.msgid;
       const comments = msg.comments;
-      items.push({ msgid, msgctxt, msgstr, comments });
+      if (msgid !== '') {
+        items.push({ msgid, msgctxt, msgstr, comments });
+      }
     });
   });
   return items;
