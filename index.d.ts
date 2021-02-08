@@ -18,7 +18,7 @@ export declare interface SyncDownOptions {
   configFile?: string;
 }
 
-export declare function syncUp(options?: SyncUpOptions): void;
+export declare function syncUp(options?: SyncUpOptions): Promise<void>;
 
 /**
  * @public
