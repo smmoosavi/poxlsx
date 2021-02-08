@@ -19,7 +19,7 @@ describe('load google sheet', () => {
       msgctxt: '',
       msgid: 'Apple',
       msgstr: 'سیب',
-      po: '',
+      po: 'سیب',
     });
     expect(data?.[1]).toEqual({
       msgctxt: '',

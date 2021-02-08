@@ -25,7 +25,7 @@ export async function loadDoc(
   return doc;
 }
 
-async function getOrCreateSheet(xlsx: XlsxFile, doc: GoogleSpreadsheet) {
+export async function getOrCreateSheet(xlsx: XlsxFile, doc: GoogleSpreadsheet) {
   const sheet = await getSheet(xlsx, doc);
   if (sheet) {
     if (!(await validateSheet(sheet))) {

@@ -11,7 +11,7 @@ interface SheetData {
 export const sheetId = '1ysPqvxVFJaRVSwPLwsj54xnGf5vULPQdVl7jf_qBWBo';
 
 export const faRows = [
-  { msgctxt: '', msgid: 'Apple', msgstr: 'سیب', po: '' },
+  { msgctxt: '', msgid: 'Apple', msgstr: 'سیب', po: 'سیب' },
   { msgctxt: '', msgid: '{n} days', msgstr: '{n} روزها', po: '' },
   { msgctxt: 'home', msgid: 'Key', msgstr: 'کلید', po: '' },
   { msgctxt: '', msgid: 'red', msgstr: 'قرمز', po: '' },
