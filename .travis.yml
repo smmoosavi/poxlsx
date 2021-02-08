@@ -9,7 +9,7 @@ install:
 script:
   - yarn lint
   - yarn format:check
-  - yarn test --coverage --verbose --runInBand
+  - yarn test
   - rm ci-key.json
   - yarn build
   - git diff --exit-code --name-only
