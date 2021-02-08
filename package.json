@@ -34,7 +34,8 @@
     "format": "libton-script format",
     "format:check": "libton-script format --check",
     "validate": "libton-script lint && libton-script format --check && libton-script test --coverage --verbose",
-    "prepublishOnly": "yarn validate && yarn build"
+    "prepublishOnly": "yarn validate && yarn build",
+    "release": "standard-version"
   },
   "devDependencies": {
     "@types/gettext-parser": "^4.0.0",
@@ -46,7 +47,8 @@
     "husky": "4.3.8",
     "libton-script": "0.12.7",
     "lint-staged": "10.5.3",
-    "mock-fs": "^4.13.0"
+    "mock-fs": "^4.13.0",
+    "standard-version": "^9.1.0"
   },
   "dependencies": {
     "cosmiconfig": "^7.0.0",
