@@ -1,6 +1,6 @@
 {
   "name": "poxlsx",
-  "description": "sync po/xlsx files",
+  "description": "sync po files with google sheets",
   "version": "0.0.1",
   "license": "MIT",
   "main": "lib/poxlsx.js",
@@ -19,6 +19,13 @@
   "bin": {
     "poxlsx": "bin/poxlsx.js"
   },
+  "keywords": [
+    "google sheets",
+    "google spreadsheets",
+    "gettext",
+    "i18n",
+    "po"
+  ],
   "scripts": {
     "build": "libton-script build",
     "build:doc": "libton-script doc",

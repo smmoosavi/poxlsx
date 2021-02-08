@@ -14,7 +14,7 @@ prog.command('help', 'Display help', { default: true }).action(() => {
 
 prog
   .command('up [language]')
-  .describe('Sync po file to the xlxs file/google sheet')
+  .describe('Sync po file to the google sheet')
   .action((language, opts) => {
     syncUp({
       language,
@@ -25,7 +25,7 @@ prog
 
 prog
   .command('down [language]')
-  .describe('Sync xlxs file/google sheet to the po file')
+  .describe('Sync google sheet to the po file')
   .action((language, opts) => {
     syncDown({
       language,
