@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - node
+install:
+  - yarn global add codecov
+  - yarn
+script:
+  - yarn lint
+  - yarn format:check
+  - yarn test --coverage --verbose --runInBand
+  - rm ci-key.json
+  - yarn build
+  - git diff --exit-code --name-only
+  - codecov
+deploy:
+  provider: npm
+  email: se.mo.moosavi@gmail.com
+  api_key:
+    secure: A1IYnVcCz4tF2De6p5rutfsg4Z4z3qppGl1vJJVhKhigC1TNb65d3uBg+2jQxYcsY7DtR2L/J5Dm+j1dT2mAhW2DsAqdRyw3GWFZBUFH1dhv3FPITRsoC2YwtMiFivLoQyJqCBRuab3piKBuyZlXJE1l1+4qqwSP6NjC3aKjzPpcdNB0I3lIwAnHRUHkD/KOza1QN8jOInYcj84O1DoMTQv9mc1dGlhXldCWobbHDzqsfdgyvMfQeEAEsRWQ8GjaqbSIkoqMLyi0Pw67Zl/wv10E8y7I2HZiFTJJkzAVMVldE865HXMitVfj1S+irNqSvxthacM+7uvqvDztMLpnIl83e1OX/tSDuiYZMFOHQNEjCAbwi8CombuURaughts9JON23xesXK8g+Iw+q8WlJbHaK9Fa49CBDS3yz76cRCbnky/NFe4vj2VQTb9KkVL+ijiOJt/exQeHVx5MyFgwXTj+MgxlKn1Q45VpOlEVLbBkL9XOm4SoytZptyOigYj4NTt6GjENzrB/MMKegqPNUKTn4nn6ygxx64yT/EpLrZqvMPv3gNgCdEmSYKULWQFej0dGvLr8tYFRmytg51IbMg/u0LRzRiNlMzhoQOKmYFvpDy7vD6oN6V3AxANV/Sz/Z+jzzoN4iZFGdTFrms8ZcIK5cAuQjwpN+2kdeOkgutM=
+  on:
+    tags: true
+    repo: smmoosavi/poxlsx
+    branch: main
+  skip_cleanup: 'true'
