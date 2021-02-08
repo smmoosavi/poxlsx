@@ -9,6 +9,7 @@ interface SheetData {
 }
 
 export const sheetId = '1ysPqvxVFJaRVSwPLwsj54xnGf5vULPQdVl7jf_qBWBo';
+export const GOOGLE_KEY_PATH = './ci-key.json';
 
 export const faRows = [
   { msgctxt: '', msgid: 'Apple', msgstr: 'سیب', po: 'سیب' },
@@ -61,7 +62,7 @@ async function syncSheet(doc: GoogleSpreadsheet, lang: string) {
 }
 
 export async function resetSheets() {
-  const key = loadKeyFile('../google-keys/key.json');
+  const key = loadKeyFile(GOOGLE_KEY_PATH);
   const doc = await loadDoc({ id: sheetId }, key);
   await removeSheets(doc);
   await syncSheet(doc, 'fa');

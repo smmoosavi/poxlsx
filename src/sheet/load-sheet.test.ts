@@ -1,4 +1,4 @@
-import { resetSheets, sheetId } from '../__fixture__/sheet';
+import { GOOGLE_KEY_PATH, resetSheets, sheetId } from '../__fixture__/sheet';
 import { loadKeyFile } from '../context/context';
 import { loadDoc, loadSheet } from './load-sheet';
 
@@ -7,7 +7,7 @@ describe('load google sheet', () => {
     await resetSheets();
   }, 50000);
   it('should load doc', async () => {
-    const key = loadKeyFile('../google-keys/key.json');
+    const key = loadKeyFile(GOOGLE_KEY_PATH);
     const doc = await loadDoc({ id: sheetId }, key);
     const data = await loadSheet({ sheet: 'fa' }, doc);
     expect(data?.[0]).toEqual({
@@ -30,7 +30,7 @@ describe('load google sheet', () => {
     });
   }, 50000);
   it('should create sheet if not existed', async () => {
-    const key = loadKeyFile('../google-keys/key.json');
+    const key = loadKeyFile(GOOGLE_KEY_PATH);
     const doc = await loadDoc({ id: sheetId }, key);
     const data = await loadSheet({ sheet: 'ru' }, doc);
     expect(data).toHaveLength(0);
@@ -38,7 +38,7 @@ describe('load google sheet', () => {
     expect(doc.sheetsByTitle['ru']).toBeDefined();
   }, 50000);
   it('should leave invalid sheet', async () => {
-    const key = loadKeyFile('../google-keys/key.json');
+    const key = loadKeyFile(GOOGLE_KEY_PATH);
     const doc = await loadDoc({ id: sheetId }, key);
     const promise = loadSheet({ sheet: 'invalid' }, doc);
     await expect(promise).rejects.toThrowError('invalid sheet');

@@ -1,5 +1,5 @@
 import mockFs from 'mock-fs';
-import { resetSheets, sheetId } from '../__fixture__/sheet';
+import { GOOGLE_KEY_PATH, resetSheets, sheetId } from '../__fixture__/sheet';
 import { FileConfig, loadKeyFile } from '../context/context';
 import { loadPoFile } from '../po-file/load-po-file';
 import { syncDownFile } from './sync-down';
@@ -12,7 +12,7 @@ describe('sync-up', () => {
     mockFs.restore();
   });
   it('should update doc', async () => {
-    const key = loadKeyFile('../google-keys/key.json');
+    const key = loadKeyFile(GOOGLE_KEY_PATH);
     const config: FileConfig = {
       po: '/root/fa.po',
       xlsx: { id: sheetId, sheet: 'fa' },

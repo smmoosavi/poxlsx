@@ -6,3 +6,4 @@ node_modules
 /coverage/
 /.cache/
 /tsdoc-metadata.json
+/ci-key.json

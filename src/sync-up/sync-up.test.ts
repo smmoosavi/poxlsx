@@ -1,4 +1,4 @@
-import { resetSheets, sheetId } from '../__fixture__/sheet';
+import { GOOGLE_KEY_PATH, resetSheets, sheetId } from '../__fixture__/sheet';
 import { FileConfig, loadKeyFile } from '../context/context';
 import { loadDoc, loadSheet } from '../sheet/load-sheet';
 import { syncUpFile } from './sync-up';
@@ -8,7 +8,7 @@ describe('sync-up', () => {
     await resetSheets();
   }, 50000);
   it('should update doc', async () => {
-    const key = loadKeyFile('../google-keys/key.json');
+    const key = loadKeyFile(GOOGLE_KEY_PATH);
     const config: FileConfig = {
       po: 'src/__fixture__/fa.po',
       xlsx: { id: sheetId, sheet: 'fa' },
